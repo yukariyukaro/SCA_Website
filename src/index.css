@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+/* 引入思源宋体繁体（Source Han Serif TW） */
+@font-face {
+  font-family: 'Source Han Serif TW';
+  src: local('Source Han Serif TW'),
+       url('https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+html, body {
+  font-family: 'Source Han Serif TW', serif;
+}
