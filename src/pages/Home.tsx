@@ -1,10 +1,9 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
-import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
-
-// 导入花朵SVG图片
+import { NavigationButton } from '../components/NavigationButton';
+import type { NavigationConfig } from '../types/navigation';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -12,6 +11,100 @@ import 'swiper/css/pagination';
 
 const Home: React.FC = () => {
   const swiperModules = [Pagination, Autoplay];
+
+  // 导航按钮配置数据
+  const navigationConfigs: NavigationConfig[] = [
+    {
+      icon: 'fas fa-book-open',
+      text: '資源總覽',
+      menuItems: [
+        {
+          id: 'medical-resources',
+          label: '醫療資源',
+          path: '/resources/medical',
+          description: '專業醫療機構和服務信息'
+        },
+        {
+          id: 'support-groups',
+          label: '支援小組',
+          path: '/resources/support',
+          description: '患者和家屬互助組織'
+        },
+        {
+          id: 'rehabilitation',
+          label: '復康服務',
+          path: '/resources/rehabilitation',
+          description: '物理治療和職業治療資源'
+        },
+        {
+          id: 'daily-support',
+          label: '日常生活支援',
+          path: '/resources/daily',
+          description: '輔助器具和生活技巧'
+        }
+      ]
+    },
+    {
+      icon: 'fas fa-users',
+      text: '關於我們',
+      menuItems: [
+        {
+          id: 'mission',
+          label: '項目使命',
+          path: '/about/mission',
+          description: '項目目標和願景介紹'
+        },
+        {
+          id: 'team',
+          label: '團隊介紹',
+          path: '/about/team',
+          description: '核心團隊成員信息'
+        },
+        {
+          id: 'partners',
+          label: '合作夥伴',
+          path: '/about/partners',
+          description: '協作機構和組織展示'
+        },
+        {
+          id: 'contact',
+          label: '聯絡方式',
+          path: '/about/contact',
+          description: '聯繫信息和地址'
+        }
+      ]
+    },
+    {
+      icon: 'fas fa-download',
+      text: '手冊下載',
+      menuItems: [
+        {
+          id: 'patient-guide',
+          label: '患者指南',
+          path: '/download/patient-guide',
+          description: 'PDF格式的患者手冊'
+        },
+        {
+          id: 'caregiver-handbook',
+          label: '照護者手冊',
+          path: '/download/caregiver',
+          description: '家屬照護指導文檔'
+        },
+        {
+          id: 'exercise-guide',
+          label: '運動指南',
+          path: '/download/exercise',
+          description: '適合的運動和復健指導'
+        },
+        {
+          id: 'resource-list',
+          label: '資源清單',
+          path: '/download/resources',
+          description: '完整的資源列表文檔'
+        }
+      ]
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -47,19 +140,15 @@ const Home: React.FC = () => {
       <div className="mx-auto max-w-7xl">
         {/* Navigation */}
         <nav className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 my-8">
-          {[
-            { icon: 'fas fa-book-open', text: '資源總覽', path: '/resources' },
-            { icon: 'fas fa-users', text: '關於我們', path: '/about' },
-            { icon: 'fas fa-download', text: '手冊下載', path: '/download' }
-          ].map((item, index) => (
-            <Link
+          {navigationConfigs.map((config, index) => (
+            <NavigationButton
               key={index}
-              to={item.path}
-              className="flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 md:px-12 py-3 sm:py-4 md:py-5 bg-[#FFB876] text-white rounded-full hover:bg-[#FF9F4D] transition-colors duration-300 !rounded-button whitespace-nowrap text-lg sm:text-xl md:text-2xl font-semibold shadow-lg min-w-[140px] sm:min-w-[160px] md:min-w-[180px] min-h-[48px] sm:min-h-[56px] md:min-h-[64px]"
-            >
-              <i className={`${item.icon} text-xl sm:text-2xl md:text-3xl`}></i>
-              <span>{item.text}</span>
-            </Link>
+              config={config}
+              className=""
+              onItemClick={(item) => {
+                console.log('Navigation item clicked:', item);
+              }}
+            />
           ))}
         </nav>
 
@@ -124,4 +213,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home; 
+export default Home;
