@@ -46,7 +46,7 @@ const Home: React.FC = () => {
       {/* 页面主要内容容器 */}
       <div className="mx-auto max-w-7xl">
         {/* Navigation */}
-        <nav className="flex flex-col sm:flex-row justify-center gap-20 sm:gap-22 my-8">
+        <nav className="flex flex-col sm:flex-row justify-center gap-30 sm:gap-32 my-8">
           {[
             { icon: 'fas fa-book-open', text: '資源總覽', path: '/resources' },
             { icon: 'fas fa-users', text: '關於我們', path: '/about' },
