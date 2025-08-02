@@ -63,39 +63,44 @@ const Home: React.FC = () => {
           ))}
         </nav>
 
-        {/* Main Content */}
-        <div className="relative flex flex-col lg:flex-row gap-4 lg:gap-8 px-4 lg:px-6 my-6 lg:my-12 items-stretch">
-          {/* Left Column */}
-          <div className="w-full lg:w-2/5 bg-[#FFF2D8] rounded-xl p-3 lg:p-8">
-            <div className="flex justify-start mb-3 lg:mb-8">
-              {/* 重新设计标题区域 */}
-              <div className="relative">
-                {/* 白色阴影矩形，位于橙色矩形右下方 */}
-                <div className="absolute bg-white rounded-md shadow-md w-full h-full top-2 left-2 sm:top-3 sm:left-3 lg:top-4 lg:left-4"></div>
-                {/* 橙色矩形，包含文字 */}
-                <div className="relative z-10 bg-[#ffe8a3] rounded-md px-3 py-2 sm:px-4 sm:py-3 lg:px-5 lg:py-4">
-                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#a45a52] leading-tight whitespace-nowrap">我們的<br/>初心......</h2>
+          {/* Main Content - 响应式布局 */}
+        <div className="relative my-6 lg:my-12">
+          {/* 橙色背景块 - 与左侧内容对齐 */}
+          <div 
+            className="absolute inset-y-0 left-0 right-0 bg-[#FFC47E] rounded-xl z-0"
+            style={{
+              left: 'calc(50% - 50vw + 1rem)', // 对齐容器左侧
+              right: 'calc(50% - 50vw + 1rem)'  // 扩展至视窗边缘
+            }}
+          />
+          
+          {/* 内容容器 */}
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-5 gap-8">
+            {/* 左侧黄色板块 (2/5宽度) */}
+            <div className="lg:col-span-2 bg-[#FFF2D8] rounded-xl p-6 lg:p-8 shadow-lg">
+              <div className="flex justify-start mb-6 lg:mb-8">
+                <div className="relative">
+                  <div className="absolute bg-white rounded-md shadow-md w-full h-full top-2 left-2 sm:top-3 sm:left-3 lg:top-4 lg:left-4" />
+                  <div className="relative z-10 bg-[#ffe8a3] rounded-md px-4 py-3 lg:px-5 lg:py-4">
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#a45a52] leading-tight whitespace-nowrap">
+                      我們的<br/>初心......
+                    </h2>
+                  </div>
                 </div>
               </div>
+              <p className="text-gray-700 leading-relaxed text-base sm:text-xl lg:text-2xl">
+                這個網站的誕生，源於我們對小腦萎縮症患者的敬意與關懷...
+              </p>
             </div>
-            {/* 增加移动端字体大小 */}
-            <p className="text-gray-700 leading-relaxed text-base sm:text-xl lg:text-2xl">
-              這個網站的誕生，源於我們對小腦萎縮症患者的敬意與關懷。在與患者和家屬的交流中，我們深刻感受到，雖然病的旅程難免孤獨挑戰，但愛與支持讓彼此的腳步不再孤單。我們希望這個網站能像一枚指南針，在你需要時提供一個方向，幫助你找到社區中可依靠的資源與力量。在此，我們懇摯邀請更多同路人加入，互相看見，共同成長！
-            </p>
-          </div>
 
-          {/* Right Column - Image Carousel */}
-          <div className="w-full lg:w-3/5 relative h-48 lg:h-auto">
-            {/* 背景色块 - 修改为完全匹配左侧高度 */}
-            <div className="absolute inset-0 lg:-left-8 bg-[#FFC47E] rounded-xl z-0 h-full"></div>
-            {/* 调整Swiper容器位置为完全居中 */}
-            <div className="relative z-10 flex items-center justify-center w-full h-full py-3 lg:py-8">
-              <div className="w-4/5 h-4/5 flex items-center justify-center">
+            {/* 右侧轮播图区域 (3/5宽度) */}
+            <div className="lg:col-span-3 h-64 lg:h-auto flex items-center">
+              <div className="w-full h-full rounded-xl overflow-hidden shadow-lg">
                 <Swiper
                   modules={swiperModules}
                   pagination={{ clickable: true }}
                   autoplay={{ delay: 5000 }}
-                  className="w-full h-full rounded-xl overflow-hidden shadow-lg"
+                  className="h-full"
                 >
                   <SwiperSlide>
                     <img
@@ -117,11 +122,11 @@ const Home: React.FC = () => {
           </div>
         </div>
 
-        {/* Footer */}
+        {/* Footer部分保持不变 */}
         <Footer />
       </div>
     </div>
   );
 };
 
-export default Home; 
+export default Home;
