@@ -103,8 +103,8 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* 教育夥伴 */}
-          <div className="flex flex-col md:flex-row items-start lg:w-[45%]">
+          {/* 教育夥伴 - 向右移动 */}
+          <div className="flex flex-col md:flex-row items-start lg:w-[45%] ml-4 md:ml-8 lg:ml-12">
             <div className="text-gray-800 text-base md:text-lg font-light mb-3 md:mb-0 md:mr-6 min-w-[5em]">
               教育夥伴：
             </div>
@@ -131,8 +131,8 @@ export default function Footer() {
             />
           </div>
 
-          {/* 協力 */}
-          <div className="flex flex-col md:flex-row items-start lg:w-[45%]">
+          {/* 協力 - 向右移动 */}
+          <div className="flex flex-col md:flex-row items-start lg:w-[45%] ml-4 md:ml-8 lg:ml-12">
             <div className="text-gray-800 text-base md:text-lg font-light mb-3 md:mb-0 md:mr-6 min-w-[5em]">
               協力：
             </div>
