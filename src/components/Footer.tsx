@@ -79,8 +79,7 @@ export default function Footer() {
       
       {/* 生科院2 */}
       <div className="absolute h-[80.829px] left-[759.42px] top-[34.59px] w-[225.274px]">
-        <img src="/img/partners/生科院2.svg" alt="生科院1" className="w-full h-full object-contain" />
-" alt="生科院2" className="w-full h-full object-contain" />
+        <img src="/img/partners/生科院2.svg" alt="生科院2" className="w-full h-full object-contain" />
       </div>
       
       {/* 生科院3 */}
