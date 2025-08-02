@@ -65,66 +65,61 @@ const Home: React.FC = () => {
 
           {/* Main Content - 只修改橙色背景部分 */}
         <div className="relative flex flex-col lg:flex-row gap-4 lg:gap-8 px-4 lg:px-6 my-6 lg:my-12 items-stretch">
-          {/* Left Column - 完全不变 */}
-          <div className="w-full lg:w-2/5 bg-[#FFF2D8] rounded-xl p-3 lg:p-8">
-            <div className="flex justify-start mb-3 lg:mb-8">
-              <div className="relative">
-                <div className="absolute bg-white rounded-md shadow-md w-full h-full top-2 left-2 sm:top-3 sm:left-3 lg:top-4 lg:left-4"></div>
-                <div className="relative z-10 bg-[#ffe8a3] rounded-md px-3 py-2 sm:px-4 sm:py-3 lg:px-5 lg:py-4">
-                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#a45a52] leading-tight whitespace-nowrap">我們的<br/>初心......</h2>
-                </div>
-              </div>
-            </div>
-            <p className="text-gray-700 leading-relaxed text-base sm:text-xl lg:text-2xl">
-              這個網站的誕生，源於我們對小腦萎縮症患者的敬意與關懷。在與患者和家屬的交流中，我們深刻感受到，雖然病的旅程難免孤獨挑戰，但愛與支持讓彼此的腳步不再孤單。我們希望這個網站能像一枚指南針，在你需要時提供一個方向，幫助你找到社區中可依靠的資源與力量。在此，我們懇摯邀請更多同路人加入，互相看見，共同成長！
-            </p>
-          </div>
-
-          {/* Right Column - 只修改橙色背景 */}
-          <div className="w-full lg:w-3/5 relative h-48 lg:h-auto">
-            {/* 新橙色背景 - 只修改这个部分 */}
-            <div className="absolute inset-0 bg-[#FFC47E] rounded-xl z-0 h-full" 
-                 style={{
-                   left: '-9999px',
-                   right: '-9999px',
-                   marginLeft: 'calc(50% - 50vw + 1rem)',
-                   marginRight: 'calc(50% - 50vw + 1rem)'
-                 }} />
-            
-            {/* 轮播图部分 - 完全不变 */}
-            <div className="relative z-10 flex items-center justify-center w-full h-full py-3 lg:py-8">
-              <div className="w-4/5 h-4/5 flex items-center justify-center">
-                <Swiper
-                  modules={swiperModules}
-                  pagination={{ clickable: true }}
-                  autoplay={{ delay: 5000 }}
-                  className="w-full h-full rounded-xl overflow-hidden shadow-lg"
-                >
-                  <SwiperSlide>
-                    <img
-                      src="/img/home/homeSwiper/Photo1.svg"
-                      alt="社區支援活動"
-                      className="w-full h-full object-cover"
-                    />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img
-                      src="/img/home/homeSwiper/Photo2.svg"
-                      alt="專業醫療支援"
-                      className="w-full h-full object-cover"
-                    />
-                  </SwiperSlide>
-                </Swiper>
-              </div>
-            </div>
-          </div>
+  {/* 左侧黄色板块 - 完全不变（包含所有文字） */}
+  <div className="w-full lg:w-2/5 bg-[#FFF2D8] rounded-xl p-3 lg:p-8 z-10">
+    <div className="flex justify-start mb-3 lg:mb-8">
+      <div className="relative">
+        <div className="absolute bg-white rounded-md shadow-md w-full h-full top-2 left-2 sm:top-3 sm:left-3 lg:top-4 lg:left-4"></div>
+        <div className="relative z-10 bg-[#ffe8a3] rounded-md px-3 py-2 sm:px-4 sm:py-3 lg:px-5 lg:py-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#a45a52] leading-tight whitespace-nowrap">
+            我們的<br/>初心......
+          </h2>
         </div>
+      </div>
+    </div>
+    <p className="text-gray-700 leading-relaxed text-base sm:text-xl lg:text-2xl">
+      這個網站的誕生，源於我們對小腦萎縮症患者的敬意與關懷。在與患者和家屬的交流中，我們深刻感受到，雖然病的旅程難免孤獨挑戰，但愛與支持讓彼此的腳步不再孤單。我們希望這個網站能像一枚指南針，在你需要時提供一個方向，幫助你找到社區中可依靠的資源與力量。在此，我們懇摯邀請更多同路人加入，互相看見，共同成長！
+    </p>
+  </div>
 
-        {/* Footer部分 - 完全不变 */}
+  {/* 右侧区域 - 只修改橙色背景 */}
+  <div className="w-full lg:w-3/5 relative h-48 lg:h-auto">
+    {/* 修改后的橙色背景（向左延伸） */}
+    <div className="absolute inset-y-0 bg-[#FFC47E] rounded-xl z-0 h-full" 
+         style={{ left: '-50px', right: '0' }} />
+    
+    {/* 轮播图 - 完全不变 */}
+    <div className="relative z-10 flex items-center justify-center w-full h-full py-3 lg:py-8">
+      <div className="w-4/5 h-4/5 flex items-center justify-center">
+        <Swiper
+          modules={swiperModules}
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 5000 }}
+          className="w-full h-full rounded-xl overflow-hidden shadow-lg"
+        >
+          <SwiperSlide>
+            <img
+              src="/img/home/homeSwiper/Photo1.svg"
+              alt="社區支援活動"
+              className="w-full h-full object-cover"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              src="/img/home/homeSwiper/Photo2.svg"
+              alt="專業醫療支援"
+              className="w-full h-full object-cover"
+            />
+          </SwiperSlide>
+        </Swiper>
+      </div>
+    </div>
+  </div>
+</div> 
+
+        {/* Footer */}
         <Footer />
       </div>
     </div>
   );
-};
-
-export default Home;
+}
