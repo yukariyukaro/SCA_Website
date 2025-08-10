@@ -1,10 +1,11 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Footer from '../components/Footer';
-
-// 导入花朵SVG图片
+import HomeHeader from '../components/HomeHeader';
+import { NavigationButton } from '../components/NavigationButton';
+import type { NavigationConfig } from '../types/navigation';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -12,54 +13,135 @@ import 'swiper/css/pagination';
 
 const Home: React.FC = () => {
   const swiperModules = [Pagination, Autoplay];
+  const navigate = useNavigate();
+
+  // 导航按钮配置数据
+  const navigationConfigs: NavigationConfig[] = [
+    {
+      icon: 'fas fa-book-open',
+      text: '資源總覽',
+      menuItems: [
+        {
+          id: 'disability-certificate',
+          label: '殘疾人士證明',
+          contentId: '/resources/disability-certificate',
+          description: '殘疾人士證明申請和相關服務'
+        },
+        {
+          id: 'transportation',
+          label: '交通出行',
+          contentId: '/resources/transportation',
+          description: '無障礙交通和出行支援服務'
+        },
+        {
+          id: 'residential-care',
+          label: '居住&日間照顧',
+          contentId: '/resources/residential-care',
+          description: '住宿和日間照顧服務'
+        },
+        {
+          id: 'medical-rehabilitation',
+          label: '醫療&復康',
+          contentId: '/resources/medical-rehabilitation',
+          description: '醫療和復康治療服務'
+        },
+        {
+          id: 'community-support',
+          label: '攜手共行',
+          contentId: '/resources/community-support',
+          description: '社區支援和互助服務'
+        },
+        {
+          id: 'employment-training',
+          label: '就業&培訓',
+          contentId: '/resources/employment-training',
+          description: '就業支援和職業培訓服務'
+        }
+      ]
+    },
+    {
+      icon: 'fas fa-users',
+      text: '關於我們',
+      menuItems: [
+        {
+          id: 'mission',
+          label: '項目使命',
+          contentId: '/about/mission',
+          description: '項目目標和願景介紹'
+        },
+        {
+          id: 'team',
+          label: '團隊介紹',
+          contentId: '/about/team',
+          description: '核心團隊成員信息'
+        },
+        {
+          id: 'partners',
+          label: '合作夥伴',
+          contentId: '/about/partners',
+          description: '協作機構和組織展示'
+        },
+        {
+          id: 'contact',
+          label: '聯絡方式',
+          contentId: '/about/contact',
+          description: '聯繫信息和地址'
+        }
+      ]
+    },
+    {
+      icon: 'fas fa-download',
+      text: '手冊下載',
+      menuItems: [
+        {
+          id: 'patient-guide',
+          label: '患者指南',
+          contentId: '/download',
+          description: 'PDF格式的患者手冊'
+        },
+        {
+          id: 'caregiver-handbook',
+          label: '照護者手冊',
+          contentId: '/download',
+          description: '家屬照護指導文檔'
+        },
+        {
+          id: 'exercise-guide',
+          label: '運動指南',
+          contentId: '/download',
+          description: '適合的運動和復健指導'
+        },
+        {
+          id: 'resource-list',
+          label: '資源清單',
+          contentId: '/download',
+          description: '完整的資源列表文檔'
+        }
+      ]
+    }
+  ];
+
+  // 处理菜单项点击
+  const handleItemClick = (item: any) => {
+    navigate(item.contentId);
+  };
 
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Header，设置为100%宽度 */}
-      <header className="relative bg-[#FFC47E] overflow-visible">
-        <div className="relative mx-auto max-w-7xl flex flex-col items-center py-2 lg:py-4 px-4 lg:px-6">
-          <div className="flex items-center justify-center gap-2 lg:gap-3 w-full">
-            <img src="/img/home/logo.svg" alt="logo" className="h-12 lg:h-20 w-12 lg:w-20 object-contain rounded-full border-2 lg:border-4 border-white bg-white" />
-            <h1 className="text-lg lg:text-4xl sm:text-5xl font-bold text-white leading-tight">「攜手同行」小腦萎縮症社區資源包</h1>
-          </div>
-          {/* 花朵装饰 - 恢复其位置 */}
-          <div className="absolute right-3 lg:right-6 h-full w-20 sm:w-32 md:w-52 lg:w-64">
-            <img
-              src="/img/home/flower1.svg"
-              alt="花朵装饰1"
-              className="w-[30px] h-[30px] sm:w-[50px] sm:h-[50px] md:w-[60px] md:h-[60px] lg:w-[73px] lg:h-[73px] absolute -top-3 lg:-top-5 right-[40%] z-10"
-            />
-            <img
-              src="/img/home/flower3.svg"
-              alt="花朵装饰3"
-              className="w-[30px] h-[30px] sm:w-[50px] sm:h-[50px] md:w-[60px] md:h-[60px] lg:w-[73px] lg:h-[73px] absolute top-[20%] right-0 z-10"
-            />
-            <img
-              src="/img/home/flower2.svg"
-              alt="花朵装饰2"
-              className="w-[25px] h-[25px] sm:w-[45px] sm:h-[45px] md:w-[55px] md:h-[55px] lg:w-[66px] lg:h-[66px] absolute -bottom-4 lg:-bottom-6 right-[30%] z-10"
-            />
-          </div>
-        </div>
-      </header>
+      {/* Header */}
+      <HomeHeader />
 
       {/* 页面主要内容容器 */}
       <div className="mx-auto max-w-7xl">
         {/* Navigation */}
-        <nav className="flex flex-col sm:flex-row justify-center gap-30 sm:gap-32 my-8">
-          {[
-            { icon: 'fas fa-book-open', text: '資源總覽', path: '/resources' },
-            { icon: 'fas fa-users', text: '關於我們', path: '/about' },
-            { icon: 'fas fa-download', text: '手冊下載', path: '/download' }
-          ].map((item, index) => (
-            <Link
+        <nav className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 my-8">
+          {navigationConfigs.map((config, index) => (
+            <NavigationButton
               key={index}
-              to={item.path}
-              className="flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 md:px-12 py-3 sm:py-4 md:py-5 bg-[#FFB876] text-white rounded-full hover:bg-[#FF9F4D] transition-colors duration-300 !rounded-button whitespace-nowrap text-lg sm:text-xl md:text-2xl font-semibold shadow-lg min-w-[140px] sm:min-w-[160px] md:min-w-[180px] min-h-[48px] sm:min-h-[56px] md:min-h-[64px]"
-            >
-              <i className={`${item.icon} text-xl sm:text-2xl md:text-3xl`}></i>
-              <span>{item.text}</span>
-            </Link>
+              config={config}
+              className=""
+              onItemClick={handleItemClick}
+            />
           ))}
         </nav>
 
@@ -123,4 +205,5 @@ const Home: React.FC = () => {
     </div>
   );
 };
+
 export default Home;
