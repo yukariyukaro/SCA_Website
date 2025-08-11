@@ -95,27 +95,9 @@ const Home: React.FC = () => {
       menuItems: [
         {
           id: 'patient-guide',
-          label: '患者指南',
+          label: '患者收测',
           contentId: '/download',
-          description: 'PDF格式的患者手冊'
-        },
-        {
-          id: 'caregiver-handbook',
-          label: '照護者手冊',
-          contentId: '/download',
-          description: '家屬照護指導文檔'
-        },
-        {
-          id: 'exercise-guide',
-          label: '運動指南',
-          contentId: '/download',
-          description: '適合的運動和復健指導'
-        },
-        {
-          id: 'resource-list',
-          label: '資源清單',
-          contentId: '/download',
-          description: '完整的資源列表文檔'
+          description: '小腦萎縮症患者收测手冊'
         }
       ]
     }
@@ -127,7 +109,7 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen">
       {/* Header */}
       <HomeHeader />
 

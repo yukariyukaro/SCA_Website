@@ -1,8 +1,9 @@
 import React from 'react';
-import { Outlet, useLocation } from 'react-router-dom';
+import { Outlet, useLocation, useOutletContext } from 'react-router-dom';
 import HomeHeader from '../../components/HomeHeader';
 import Footer from '../../components/Footer';
 import { SidebarMenu } from '../../components/SidebarMenu';
+import { MobileMenuDialog } from '../../components/MobileMenuDialog';
 import { resourceSidebarItems } from './_sidebar.config';
 
 const titleMap: Record<string, string> = {
@@ -15,13 +16,29 @@ const titleMap: Record<string, string> = {
   '/resources/employment-training': '就業&培訓',
 };
 
+// 定義Outlet Context的類型
+interface OutletContextType {
+  isMobileMenuOpen: boolean;
+  onCloseMobileMenu: () => void;
+}
+
 const ResourceOverviewLayout: React.FC = () => {
   const location = useLocation();
+  const { isMobileMenuOpen, onCloseMobileMenu } = useOutletContext<OutletContextType>();
   const title = titleMap[location.pathname] ?? '資源總覽';
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-50">
       <HomeHeader />
+      
+      {/* 移動端菜單彈窗 */}
+      <MobileMenuDialog
+        isOpen={isMobileMenuOpen}
+        onClose={onCloseMobileMenu}
+        items={resourceSidebarItems}
+        title="資源總覽"
+      />
+      
       <div className="mx-auto max-w-7xl px-4 lg:px-6 py-6">
         <div className="flex items-start gap-6">
           <SidebarMenu items={resourceSidebarItems} isOpen={true} onClose={() => {}} title="資源總覽" className="sticky top-6 self-start" />

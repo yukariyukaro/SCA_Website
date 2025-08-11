@@ -32,6 +32,7 @@ export interface SidebarMenuProps {
 /**
  * 侧边栏菜单组件
  * 支持多级菜单、双列布局和响应式设计
+ * 移动端隐藏，桌面端显示
  */
 export const SidebarMenu: React.FC<SidebarMenuProps> = ({ items, isOpen: _isOpen, onClose, className = '', title = '导航菜单' }) => {
   const location = useLocation();
@@ -49,7 +50,7 @@ export const SidebarMenu: React.FC<SidebarMenuProps> = ({ items, isOpen: _isOpen
   const toggle = (id: string) => setExpanded(prev => ({ ...prev, [id]: !prev[id] }));
 
   return (
-    <aside className={`w-72 lg:w-80 shrink-0 bg-white rounded-xl border shadow-sm ${className}`} aria-label="侧边栏导航">
+    <aside className={`hidden md:block w-72 lg:w-80 shrink-0 bg-white rounded-xl border shadow-sm ${className}`} aria-label="侧边栏导航">
       {/* 头部标题 */}
       <div className="p-4 border-b border-gray-200">
         <SidebarGroupLabel className="m-0 p-0">

@@ -2,7 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 
 // 懒加载页面组件
-const App = React.lazy(() => import('../App'));
+const AppLayout = React.lazy(() => import('../components/AppLayout'));
 const Home = React.lazy(() => import('../pages/Home'));
 const AboutLayout = React.lazy(() => import('../pages/About/layout'));
 const AboutIndex = React.lazy(() => import('../pages/About/index/page'));
@@ -24,7 +24,7 @@ const DownloadIndex = React.lazy(() => import('../pages/download/index/page'));
 export const routes = [
   {
     path: '/',
-    element: <App />,
+    element: <AppLayout />,
     children: [
       { index: true, element: <Home /> },
 
