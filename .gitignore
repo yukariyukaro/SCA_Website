@@ -10,9 +10,11 @@ lerna-debug.log*
 .promptx
 node_modules
 dist
+.spacestory
+dist
 dist-ssr
 *.local
-
+.specstory
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

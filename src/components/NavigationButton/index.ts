@@ -3,7 +3,7 @@
  */
 
 export { NavigationButton } from './NavigationButton';
-export { DropdownMenu } from './DropdownMenu';
+
 export type {
   NavigationButtonProps,
   DropdownMenuProps,

@@ -1,43 +1,18 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import App from './App';
-import Home from './pages/Home';
-import About from './pages/About';
-import ResourceOverview from './pages/ResourceOverview';
-import HandbookDownload from './pages/HandbookDownload';
+import { routes } from './routes';
 import './index.css'
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    children: [
-      {
-        index: true,
-        element: <Home />,
-      },
-      {
-        path: "about",
-        element: <About />,
-      },
-      {
-        path: "resources",
-        element: <ResourceOverview />,
-      },
-      {
-        path: "download",
-        element: <HandbookDownload />,
-      },
-    ],
-  },
-]);
+const router = createBrowserRouter(routes);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Suspense fallback={<div className="p-8">Loading...</div>}>
+      <RouterProvider router={router} />
+    </Suspense>
   </React.StrictMode>,
 )

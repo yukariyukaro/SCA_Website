@@ -1,0 +1,36 @@
+# 响应式设计规范（Tailwind CSS + React）
+
+## 1. 断点与布局
+- 必须使用Tailwind断点（sm/md/lg/xl/2xl）实现响应式，禁止自定义媒体查询。
+- 布局优先用flex/grid，结合gap、justify、items等实现自适应。
+- 复杂场景可用@container和容器查询变体。
+
+## 2. 图片与媒体
+- 图片必须设置`w-`、`h-`、`object-fit`等类，保证自适应。
+- 响应式图片建议用`srcSet`或第三方库，或用Tailwind的`aspect-ratio`。
+- 图片alt属性必填，提升无障碍。
+
+## 3. 表单与交互
+- 表单控件宽度自适应，使用`w-full`、`min-w-0`等。
+- 交互元素（按钮、输入框）触摸区域≥44px。
+- 状态变体（hover/focus/active/disabled）必须覆盖。
+
+## 4. 无障碍与可访问性
+- 必须为所有交互元素提供可访问label。
+- 颜色对比度需达4.5:1，支持深色模式（dark:）。
+- 键盘可操作性，tab顺序合理。
+
+## 5. 移动优先
+- 设计与开发优先考虑移动端体验，逐步适配大屏。
+- 触摸友好，避免hover-only交互。
+
+## 6. 性能优化
+- 图片懒加载，资源按需加载。
+- 组件拆分，按需渲染。
+- 使用Tailwind的预设断点，避免过多自定义。
+
+## 7. 参考文档
+- [Tailwind 响应式设计](https://tailwindcss.com/docs/responsive-design)
+- [Web无障碍标准](https://www.w3.org/WAI/standards-guidelines/wcag/)
+- [React无障碍](https://react.dev/learn/accessibility)
+ 

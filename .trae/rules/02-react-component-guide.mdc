@@ -1,0 +1,42 @@
+# React 组件开发规范与最佳实践
+
+## 1. 组件结构
+- 所有组件必须为函数组件，禁止新建class组件。
+- 组件必须顶层定义，禁止在组件内部再定义子组件。
+- 组件文件命名采用大驼峰，如`MyComponent.tsx`。
+
+## 2. Props与类型
+- 必须为props定义TypeScript类型或接口。
+- 组件props应支持`className`扩展，便于样式定制。
+- 禁止直接修改props，props只读。
+
+## 3. Hooks使用
+- 必须遵循Hooks规则（只能在顶层、只能在函数组件/自定义Hook中调用）。
+- 复杂副作用拆分为多个useEffect，避免副作用混用。
+- useMemo/useCallback仅用于性能瓶颈场景，依赖项必须准确。
+
+## 4. 状态管理
+- 局部状态优先用useState，跨组件用Context或第三方库（如Zustand）。
+- 禁止将副作用逻辑混入render流程。
+
+## 5. 性能优化
+- 组件props复杂对象/函数建议用useMemo/useCallback包裹。
+- 复用组件建议用React.memo包裹。
+- 禁止无意义的useEffect依赖抑制（如eslint-disable-next-line）。
+
+## 6. 可维护性
+- 组件职责单一，拆分粒度适中。
+- 组件内逻辑复杂建议拆分自定义Hook。
+- 组件导出默认export，必要时命名导出辅助类型/方法。
+
+## 7. 与Tailwind结合
+- className拼接建议用classnames库或模板字符串。
+- 动态样式用条件拼接className实现。
+- 组件暴露className，支持外部样式扩展。
+
+## 8. 参考文档
+- [React官方文档](https://react.dev/learn/your-first-component)
+- [Hooks规则](https://react.dev/reference/rules/rules-of-hooks)
+- [组件最佳实践](https://react.dev/learn/component-design)
+alwaysApply: true
+---
