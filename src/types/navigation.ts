@@ -6,7 +6,7 @@
 export interface NavigationItem {
   id: string;              // 唯一标识符
   label: string;           // 显示文本
-  path: string;            // 路由路径
+  contentId: string;       // 对应的内容ID
   description?: string;    // 描述信息
 }
 
