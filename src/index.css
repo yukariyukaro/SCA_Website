@@ -148,4 +148,34 @@ html, body {
   body {
     @apply bg-background text-foreground;
   }
+
+  h1, h2, h3, p, ul, ol, li,span{
+    font-family: 'Source Han Serif', serif;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 36px; /*x 1.5倍行高 */
+    letter-spacing: 0.01em;
+    color: #212121;
+  }
+}
+
+@layer components {
+  .important-text {
+    font-family: 'Source Han Serif CN', serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size:18px;
+    line-height: 36px;
+    letter-spacing: 0.01em;
+    color: #A45A52;
+  }
+}
+
+@layer utilities {
+  .important-text-sm {
+    @apply sm:text-[22px] sm:leading-[34px];
+  }
+  .important-text-md {
+    @apply md:text-[24px] md:leading-[36px];
+  }
 }

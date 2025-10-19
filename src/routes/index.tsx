@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, Navigate } from 'react-router-dom';
 
 // 懒加载页面组件
 const AppLayout = React.lazy(() => import('../components/AppLayout'));
@@ -13,7 +13,11 @@ const AboutContact = React.lazy(() => import('../pages/About/contact/page'));
 const ResourceOverviewLayout = React.lazy(() => import('../pages/ResourceOverview/layout'));
 const ResourceOverviewIndex = React.lazy(() => import('../pages/ResourceOverview/index/page'));
 const DisabilityCertificate = React.lazy(() => import('../pages/ResourceOverview/disability-certificate/page'));
-const Transportation = React.lazy(() => import('../pages/ResourceOverview/transportation/page'));
+const DiscountPage = React.lazy(() => import('../pages/ResourceOverview/transportation/discount/page'));
+const AccessibilityPage = React.lazy(() => import('../pages/ResourceOverview/transportation/accessibility/page'));
+const RehabusPage = React.lazy(() => import('../pages/ResourceOverview/transportation/accessibility/rehabus/page'));
+const OtherBusesPage = React.lazy(() => import('../pages/ResourceOverview/transportation/accessibility/other-buses/page'));
+const TaxiPage = React.lazy(() => import('../pages/ResourceOverview/transportation/accessibility/taxi/page'));
 const ResidentialCare = React.lazy(() => import('../pages/ResourceOverview/residential-care/page'));
 const MedicalRehabilitation = React.lazy(() => import('../pages/ResourceOverview/medical-rehabilitation/page'));
 const CommunitySupport = React.lazy(() => import('../pages/ResourceOverview/community-support/page'));
@@ -50,10 +54,20 @@ export const routes = [
           { path: 'disability-certificate', element: <DisabilityCertificate /> },
           { 
             path: 'transportation', 
-            element: <Transportation />,
+            element: <Outlet />,
             children: [
-              { path: 'discount', element: <Transportation /> },
-              { path: 'accessibility', element: <Transportation /> }
+              { index: true, element: <Navigate to="discount" replace /> },
+              { path: 'discount', element: <DiscountPage /> },
+              { 
+                path: 'accessibility', 
+                element: <Outlet />,
+                children: [
+                  { index: true, element: <AccessibilityPage /> },
+                  { path: 'rehabus', element: <RehabusPage /> },
+                  { path: 'other-buses', element: <OtherBusesPage /> },
+                  { path: 'taxi', element: <TaxiPage /> }
+                ]
+              }
             ]
           },
           { 

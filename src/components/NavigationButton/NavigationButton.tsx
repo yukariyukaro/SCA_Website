@@ -75,7 +75,7 @@ export const NavigationButton: React.FC<NavigationButtonProps> = ({
             />
             
             {/* 按钮文本 */}
-            <span className="whitespace-nowrap">
+            <span className="whitespace-nowrap text-white">
               {config.text}
             </span>
             

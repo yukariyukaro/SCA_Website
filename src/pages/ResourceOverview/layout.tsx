@@ -10,7 +10,11 @@ import { resourceSidebarItems } from './_sidebar.config';
 const titleMap: Record<string, string> = {
   '/resources': '資源總覽',
   '/resources/disability-certificate': '殘疾人士證明',
-  '/resources/transportation': '交通出行',
+  '/resources/transportation/discount': '交通優惠',
+  '/resources/transportation/accessibility': '無障礙出行',
+  '/resources/transportation/accessibility/rehabus': '復康巴',
+  '/resources/transportation/accessibility/other-buses': '其他巴士',
+  '/resources/transportation/accessibility/taxi': '的士',
   '/resources/residential-care': '居住&日間照顧',
   '/resources/medical-rehabilitation': '醫療&復康',
   '/resources/community-support': '攜手共行',

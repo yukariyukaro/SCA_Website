@@ -7,6 +7,7 @@ import {
 import { routes } from './routes';
 import './index.css'
 
+
 const router = createBrowserRouter(routes);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

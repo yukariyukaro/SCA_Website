@@ -10,7 +10,6 @@ export const resourceSidebarItems: SidebarMenuItem[] = [
   { 
     id: 'transportation', 
     label: '交通出行', 
-    path: '/resources/transportation', 
     description: '無障礙交通和出行支援服務',
     children: [
       { id: 'transportation-discount', label: '殘疾人交通優惠', path: '/resources/transportation/discount', description: '殘疾人士交通優惠政策和申請' },
