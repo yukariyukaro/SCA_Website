@@ -1,27 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
-
-@custom-variant dark (&:is(.dark *));
-
-/* 引入思源宋体繁体（Source Han Serif TW） */
-@font-face {
-  font-family: 'Source Han Serif TW';
-  src: local('Source Han Serif TW'),
-       url('https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+html,body {
+  font-family: 'Noto Serif TC', serif;
 }
-
-html {
-  /* 设置根字体大小为响应式，基于视口宽度 */
-  font-size: clamp(14px, 2.5vw, 16px);
-}
-
-html, body {
-  font-family: 'Source Han Serif TW', serif;
-}
-
 /* 全局响应式字体大小设置 */
 :root {
   --font-size-xs: clamp(0.75rem, 1.5vw, 0.875rem);
@@ -150,9 +132,9 @@ html, body {
   }
 
   h1, h2, h3, p, ul, ol, li,span{
-    font-family: 'Source Han Serif', serif;
+    font-family: 'Noto Serif TC', serif;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 36px; /*x 1.5倍行高 */
     letter-spacing: 0.01em;
     color: #212121;
@@ -161,9 +143,9 @@ html, body {
 
 @layer components {
   .important-text {
-    font-family: 'Source Han Serif CN', serif;
+    font-family: 'Noto Serif TC', serif;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 600;
     font-size:18px;
     line-height: 36px;
     letter-spacing: 0.01em;

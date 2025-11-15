@@ -23,6 +23,7 @@ const DownloadLayout: React.FC = () => {
   const title = titleMap[location.pathname] ?? '手冊下載';
 
   return (
+    <Outlet>
     <div className="min-h-screen bg-gray-50">
       <HomeHeader />
       <Breadcrumb />
@@ -52,6 +53,7 @@ const DownloadLayout: React.FC = () => {
       </div>
       <Footer />
     </div>
+    </Outlet>
   );
 };
 

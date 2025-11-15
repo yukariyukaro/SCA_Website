@@ -13,7 +13,17 @@ export const resourceSidebarItems: SidebarMenuItem[] = [
     description: '無障礙交通和出行支援服務',
     children: [
       { id: 'transportation-discount', label: '殘疾人交通優惠', path: '/resources/transportation/discount', description: '殘疾人士交通優惠政策和申請' },
-      { id: 'transportation-accessibility', label: '無障礙出行', path: '/resources/transportation/accessibility', description: '無障礙交通設施和服務' }
+      { 
+        id: 'transportation-accessibility', 
+        label: '無障礙出行', 
+        path: '/resources/transportation/accessibility', 
+        description: '無障礙交通設施和服務',
+        children: [
+          { id: 'transportation-accessibility-rehabus', label: '復康巴', path: '/resources/transportation/accessibility/rehabus', description: '復康巴士服務' },
+          { id: 'transportation-accessibility-other-buses', label: '其他巴士', path: '/resources/transportation/accessibility/other-buses', description: '其他無障礙巴士服務' },
+          { id: 'transportation-accessibility-taxi', label: '的士', path: '/resources/transportation/accessibility/taxi', description: '無障礙的士服務' }
+        ]
+      }
     ]
   },
   { 
@@ -22,7 +32,18 @@ export const resourceSidebarItems: SidebarMenuItem[] = [
     path: '/resources/residential-care', 
     description: '住宿和日間照顧服務',
     children: [
-      { id: 'residential-community-care', label: '社區日間照顧及支援', path: '/resources/residential-care/community', description: '社區日間照顧和支援服務' },
+      { 
+        id: 'residential-community-care', 
+        label: '社區日間照顧及支援', 
+        path: '/resources/residential-care/community', 
+        description: '社區日間照顧和支援服務',
+        children: [
+          { id: 'community-center-based', label: '中心為本', path: '/resources/residential-care/community/center-based', description: '中心為本的日間照顧服務' },
+          { id: 'community-home-based', label: '家居為本', path: '/resources/residential-care/community/home-based', description: '家居為本的日間照顧服務' },
+          { id: 'community-integrated', label: '綜合中心與家居', path: '/resources/residential-care/community/integrated', description: '綜合中心與家居的日間照顧服務' },
+          { id: 'community-non-swd', label: '非社署提供服務', path: '/resources/residential-care/community/non-swd', description: '非社署提供的日間照顧服務' }
+        ] 
+      },
       { id: 'residential-accommodation', label: '住宿照顧', path: '/resources/residential-care/accommodation', description: '住宿照顧服務和設施' }
     ]
   },

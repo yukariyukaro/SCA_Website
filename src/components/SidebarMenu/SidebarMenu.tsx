@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {
   SidebarGroupLabel,
   SidebarGroupContent,
@@ -98,23 +98,35 @@ interface RenderItemProps {
  * 单个菜单项组件
  */
 const RenderItem: React.FC<RenderItemProps> = ({ item, currentPath, onLeafClick, expanded, onToggle, level = 0 }) => {
+  const navigate = useNavigate();
   const hasChildren = !!(item.children && item.children.length > 0);
-  const isActive = !!(item.path && currentPath === item.path);
+  const isActive = !!(item.path && currentPath.startsWith(item.path));
   const isExpanded = !!expanded[item.id];
+
+  const handleNavigation = () => {
+    if (item.path) {
+      navigate(item.path);
+      onLeafClick();
+    }
+  };
 
   if (hasChildren) {
     return (
       <UISidebarMenuItem>
         <div className={`relative ${isActive ? 'border-l-4 border-[#FFC47E]' : ''}`}>
-          <SidebarMenuSubButton asChild isActive={false} className={`${level > 0 ? 'ml-4' : ''} hover:bg-gray-50 ${isActive ? 'pl-6' : 'pl-4'}`} style={{height: 'clamp(3rem, 4vw, 3.25rem)'}}>
-            <button type="button" onClick={() => onToggle(item.id)} className="flex w-full items-center gap-3 justify-between" style={{fontFamily: 'Source Han Serif CN, serif', fontSize: 'var(--font-size-base)'}}>
-              <span className="flex items-center gap-3">
-                {item.icon && <i className={`${item.icon} text-[#FFC47E]`} style={{fontSize: 'var(--font-size-lg)'}} />}
-                <span className="truncate text-black font-medium">{item.label}</span>
-              </span>
-              <ArrowRight className={`transition-transform text-black ${isExpanded ? 'rotate-90' : ''}`} style={{width: 'clamp(1.25rem, 3vw, 1.5rem)', height: 'clamp(1.25rem, 3vw, 1.5rem)'}} size={20} />
+          <div className={`${level > 0 ? 'ml-4' : ''} hover:bg-gray-50 ${isActive ? 'pl-6' : 'pl-4'} flex w-full items-center justify-between`} style={{height: 'clamp(3rem, 4vw, 3.25rem)'}}>
+            <div 
+              onClick={() => { onToggle(item.id); handleNavigation(); }}
+              className="flex items-center gap-3 cursor-pointer flex-grow"
+              style={{fontFamily: 'Source Han Serif CN, serif', fontSize: 'var(--font-size-base)'}}
+            >
+              {item.icon && <i className={`${item.icon} text-[#FFC47E]`} style={{fontSize: 'var(--font-size-lg)'}} />}
+              <span className="truncate text-black font-medium">{item.label}</span>
+            </div>
+            <button type="button" onClick={(e) => { e.stopPropagation(); onToggle(item.id); }} className="p-2">
+              <ArrowRight className={`transition-transform text-black ${isExpanded ? 'rotate-90' : ''} w-[clamp(1.25rem,3vw,1.5rem)] h-[clamp(1.25rem,3vw,1.5rem)]`} size={20} />
             </button>
-          </SidebarMenuSubButton>
+          </div>
         </div>
         {isExpanded && (
           <SidebarMenuSub>

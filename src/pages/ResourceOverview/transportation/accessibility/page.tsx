@@ -64,6 +64,14 @@ const AccessibilityPage: React.FC = () => {
           </a>
         </div>
       </section>
+
+      <div className="flex py-6">
+        <img 
+          src="/img/资源总览/残疾人交通优惠/无障碍出行.png" 
+          alt="无障碍出行" 
+          className="w-11/12 md:w-9/12 aspect-square"
+        />
+      </div>
     </div>
   );
 };

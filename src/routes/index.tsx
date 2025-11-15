@@ -18,7 +18,14 @@ const AccessibilityPage = React.lazy(() => import('../pages/ResourceOverview/tra
 const RehabusPage = React.lazy(() => import('../pages/ResourceOverview/transportation/accessibility/rehabus/page'));
 const OtherBusesPage = React.lazy(() => import('../pages/ResourceOverview/transportation/accessibility/other-buses/page'));
 const TaxiPage = React.lazy(() => import('../pages/ResourceOverview/transportation/accessibility/taxi/page'));
-const ResidentialCare = React.lazy(() => import('../pages/ResourceOverview/residential-care/page'));
+
+const AccommodationPage = React.lazy(() => import('../pages/ResourceOverview/residential-care/accommodation/page'));
+const CommunityCareIndexPage = React.lazy(() => import('../pages/ResourceOverview/residential-care/community/index/page'));
+const CenterBasedPage = React.lazy(() => import('../pages/ResourceOverview/residential-care/community/center-based/page'));
+const HomeBasedPage = React.lazy(() => import('../pages/ResourceOverview/residential-care/community/home-based/page'));
+const IntegratedPage = React.lazy(() => import('../pages/ResourceOverview/residential-care/community/integrated/page'));
+const NonSwdPage = React.lazy(() => import('../pages/ResourceOverview/residential-care/community/non-swd/page'));
+
 const MedicalRehabilitation = React.lazy(() => import('../pages/ResourceOverview/medical-rehabilitation/page'));
 const CommunitySupport = React.lazy(() => import('../pages/ResourceOverview/community-support/page'));
 const EmploymentTraining = React.lazy(() => import('../pages/ResourceOverview/employment-training/page'));
@@ -72,10 +79,21 @@ export const routes = [
           },
           { 
             path: 'residential-care', 
-            element: <ResidentialCare />,
+            element: <Outlet />,
             children: [
-              { path: 'community', element: <ResidentialCare /> },
-              { path: 'accommodation', element: <ResidentialCare /> }
+              { index: true, element: <Navigate to="community" replace /> },
+              { 
+                path: 'community', 
+                element: <Outlet />,
+                children: [
+                  { index: true, element: <CommunityCareIndexPage /> },
+                  { path: 'center-based', element: <CenterBasedPage /> },
+                  { path: 'home-based', element: <HomeBasedPage /> },
+                  { path: 'integrated', element: <IntegratedPage /> },
+                  { path: 'non-swd', element: <NonSwdPage /> }
+                ]
+              },
+              { path: 'accommodation', element: <AccommodationPage /> }
             ]
           },
           { 
