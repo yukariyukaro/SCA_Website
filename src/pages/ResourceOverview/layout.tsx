@@ -22,6 +22,8 @@ const titleMap: Record<string, string> = {
   '/resources/residential-care/community/integrated': '綜合中心與家居',
   '/resources/residential-care/community/non-swd': '非社署提供服務',
   '/resources/residential-care/accommodation': '住宿照顧',
+  '/resources/residential-care/accommodation/no-central-referral': '住宿照顧（無需中央轉介）',
+  '/resources/residential-care/accommodation/central-referral': '住宿照顧（需中央轉介）',
   '/resources/medical-rehabilitation': '醫療&復康',
   '/resources/community-support': '攜手共行',
   '/resources/employment-training': '就業&培訓',

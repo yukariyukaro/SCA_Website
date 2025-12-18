@@ -44,7 +44,17 @@ export const resourceSidebarItems: SidebarMenuItem[] = [
           { id: 'community-non-swd', label: '非社署提供服務', path: '/resources/residential-care/community/non-swd', description: '非社署提供的日間照顧服務' }
         ] 
       },
-      { id: 'residential-accommodation', label: '住宿照顧', path: '/resources/residential-care/accommodation', description: '住宿照顧服務和設施' }
+      { 
+        id: 'residential-accommodation', 
+        label: '住宿照顧', 
+        path: '/resources/residential-care/accommodation', 
+        description: '住宿照顧服務和設施',
+        children: [
+          { id: 'accommodation-no-central-referral', label: '無需中央轉介', path: '/resources/residential-care/accommodation/no-central-referral', description: '無需中央轉介的住宿照顧服務' },
+          { id: 'accommodation-central-referral', label: '需中央轉介', path: '/resources/residential-care/accommodation/central-referral', description: '需中央轉介的住宿照顧服務' }
+        ]
+      }
+
     ]
   },
   { 

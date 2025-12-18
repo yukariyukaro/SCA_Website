@@ -19,7 +19,9 @@ const RehabusPage = React.lazy(() => import('../pages/ResourceOverview/transport
 const OtherBusesPage = React.lazy(() => import('../pages/ResourceOverview/transportation/accessibility/other-buses/page'));
 const TaxiPage = React.lazy(() => import('../pages/ResourceOverview/transportation/accessibility/taxi/page'));
 
-const AccommodationPage = React.lazy(() => import('../pages/ResourceOverview/residential-care/accommodation/page'));
+
+const NoCentralReferralPage = React.lazy(() => import('../pages/ResourceOverview/residential-care/accommodation/no-central-referral/page'));
+const CentralReferralPage = React.lazy(() => import('../pages/ResourceOverview/residential-care/accommodation/central-referral/page'));
 const CommunityCareIndexPage = React.lazy(() => import('../pages/ResourceOverview/residential-care/community/index/page'));
 const CenterBasedPage = React.lazy(() => import('../pages/ResourceOverview/residential-care/community/center-based/page'));
 const HomeBasedPage = React.lazy(() => import('../pages/ResourceOverview/residential-care/community/home-based/page'));
@@ -93,7 +95,16 @@ export const routes = [
                   { path: 'non-swd', element: <NonSwdPage /> }
                 ]
               },
-              { path: 'accommodation', element: <AccommodationPage /> }
+              { 
+                path: 'accommodation', 
+                element: <Outlet />,
+                children: [
+                  { index: true, element: <Navigate to="central-referral" replace /> },
+                  { path: 'no-central-referral', element: <NoCentralReferralPage /> },
+                  { path: 'central-referral', element: <CentralReferralPage /> }
+                ]
+              }
+
             ]
           },
           { 

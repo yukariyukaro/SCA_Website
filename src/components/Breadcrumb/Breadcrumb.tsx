@@ -73,6 +73,8 @@ function generateBreadcrumbFromPath(pathname: string): BreadcrumbItem[] {
     'residential-care': '居住&日間照顧',
     'community': '社區日間照顧及支援',
     'accommodation': '住宿照顧',
+    'no-central-referral': '無需中央轉介',
+    'central-referral': '需中央轉介',
     'center-based': '中心為本',
     'home-based': '家居為本',
     'integrated': '綜合中心與家居',

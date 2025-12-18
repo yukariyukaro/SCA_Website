@@ -4,6 +4,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { LeftSidebarItem } from './LeftSidebarItem';
 import { LanguageSwitcher } from './LanguageSwitcher';
+import { FontSizeSwitcher } from '@/components/FontSizeSwitcher/FontSizeSwitcher';
 import { LeftSidebarProps, Language } from './types';
 
 /**
@@ -79,6 +80,9 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
           currentLanguage={currentLanguage}
           onLanguageChange={handleLanguageChange}
         />
+
+        {/* 字体大小切换 */}
+        <FontSizeSwitcher />
 
         {/* 移动端菜单按钮 - 仅在移动端显示 */}
         <div className="block md:hidden w-full">
