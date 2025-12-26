@@ -1,0 +1,1 @@
+import{j as e}from"./index-D9dEft0v.js";const t=()=>e.jsx("div",{className:"prose max-w-none",children:e.jsx("p",{className:"text-gray-700 text-lg",children:"页面團隊介紹（核心團隊成員信息）"})});export{t as default};

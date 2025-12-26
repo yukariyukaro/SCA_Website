@@ -1,0 +1,1 @@
+import{j as e}from"./index-D9dEft0v.js";const s=()=>e.jsx("div",{className:"prose max-w-none",children:e.jsx("p",{className:"text-gray-700 text-lg",children:"页面攜手共行（社區支援和互助服務）"})});export{s as default};
