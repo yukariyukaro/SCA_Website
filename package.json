@@ -57,5 +57,10 @@
     "typescript": "^5.8.3",
     "vite": "^7.0.4",
     "vite-plugin-pages": "^0.33.1"
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "@swc/core"
+    ]
   }
 }
