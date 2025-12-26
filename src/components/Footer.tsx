@@ -16,7 +16,7 @@ export default function Footer() {
               <div className="flex flex-col w-full space-y-4"> {/* 增加垂直间距 */}
                 <div>
                   <img 
-                    src="/img/partners/香港復康會.svg" 
+                    src={`${import.meta.env.BASE_URL}img/partners/香港復康會.svg`}
                     alt="香港復康會" 
                     className="w-full max-w-[260px] md:max-w-[300px] h-auto"
                   />
@@ -24,18 +24,18 @@ export default function Footer() {
                 <div className="flex flex-col space-y-4"> {/* 确保垂直排列时不重叠 */}
                   <div className="flex flex-wrap gap-4"> {/* 使用flex-wrap和gap确保不重叠 */}
                     <img 
-                      src="/img/partners/生科院3.svg" 
+                      src={`${import.meta.env.BASE_URL}img/partners/生科院3.svg`}
                       alt="生科院3" 
                       className="w-[65px] md:w-[75px] h-auto"
                     />
                     <img 
-                      src="/img/partners/生科院2.svg" 
+                      src={`${import.meta.env.BASE_URL}img/partners/生科院2.svg`}
                       alt="生科院2" 
                       className="w-[160px] md:w-[180px] h-auto"
                     />
                   </div>
                   <img 
-                    src="/img/partners/生科院1.svg" 
+                    src={`${import.meta.env.BASE_URL}img/partners/生科院1.svg`}
                     alt="生科院1" 
                     className="w-[250px] md:w-[280px] h-auto"
                   />
@@ -49,7 +49,7 @@ export default function Footer() {
                 教育夥伴：
               </div>
               <img 
-                src="/img/partners/善衡書院.svg" 
+                src={`${import.meta.env.BASE_URL}img/partners/善衡書院.svg`}
                 alt="善衡書院" 
                 className="w-full max-w-[270px] md:w-[310px] h-auto"
               />
@@ -65,7 +65,7 @@ export default function Footer() {
                 資助：
               </div>
               <img 
-                src="/img/partners/研究及知識轉移處.svg" 
+                src={`${import.meta.env.BASE_URL}img/partners/研究及知識轉移處.svg`}
                 alt="研究及知識轉移處" 
                 className="w-full max-w-[270px] md:max-w-[310px] h-auto"
               />
@@ -77,7 +77,7 @@ export default function Footer() {
                 協力：
               </div>
               <img 
-                src="/img/partners/小腦萎縮症協會.svg" 
+                src={`${import.meta.env.BASE_URL}img/partners/小腦萎縮症協會.svg`}
                 alt="小腦萎縮症協會" 
                 className="w-full max-w-[200px] md:max-w-[230px] h-auto"
               />

@@ -54,7 +54,7 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
       <div className="mb-6 px-2">
         <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full border-2 border-gray-200 bg-white overflow-hidden shadow-md">
           <img
-            src="/img/home/logo.svg"
+            src={`${import.meta.env.BASE_URL}img/home/logo.svg`}
             alt="攜手同行"
             className="w-full h-full object-contain p-1"
           />

@@ -113,7 +113,7 @@ const RehabusPage: React.FC = () => {
           <p className="text-lg leading-relaxed">
             總收費 = 服務時間 (最少半小時) + 里數 + $5服務預約費
           </p>
-          <img src="/img/资源总览/残疾人交通优惠/复康巴.png" alt="復康巴收費" className="w-full md:w-10/12" />
+          <img src={`${import.meta.env.BASE_URL}img/资源总览/残疾人交通优惠/复康巴.png`} alt="復康巴收費" className="w-full md:w-10/12" />
         </div>
       </section>
 

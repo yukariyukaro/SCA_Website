@@ -67,7 +67,7 @@ const AccessibilityPage: React.FC = () => {
 
       <div className="flex py-6">
         <img 
-          src="/img/资源总览/残疾人交通优惠/无障碍出行.png" 
+          src={`${import.meta.env.BASE_URL}img/资源总览/残疾人交通优惠/无障碍出行.png`}
           alt="无障碍出行" 
           className="w-11/12 md:w-9/12 aspect-square"
         />

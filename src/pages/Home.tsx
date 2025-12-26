@@ -163,14 +163,14 @@ const Home: React.FC = () => {
         >
           <SwiperSlide>
             <img
-              src="/img/home/homeSwiper/Photo1.svg"
+              src={`${import.meta.env.BASE_URL}img/home/homeSwiper/Photo1.svg`}
               alt="社區支援活動"
               className="w-full h-full object-cover"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
-              src="/img/home/homeSwiper/Photo2.svg"
+              src={`${import.meta.env.BASE_URL}img/home/homeSwiper/Photo2.svg`}
               alt="專業醫療支援"
               className="w-full h-full object-cover"
             />

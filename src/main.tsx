@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
 import {
-  createBrowserRouter,
+  createHashRouter,
   RouterProvider,
 } from "react-router-dom";
 import { routes } from './routes';
@@ -9,7 +9,7 @@ import './index.css'
 import { FontSizeProvider } from './contexts/FontSizeProvider';
 
 
-const router = createBrowserRouter(routes);
+const router = createHashRouter(routes);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
