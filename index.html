@@ -6,12 +6,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React + TS</title>
     
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script type="module" crossorigin src="/SCA_Website/assets/index-D9dEft0v.js"></script>
-    <link rel="stylesheet" crossorigin href="/SCA_Website/assets/index-DU4lor16.css">
+    <!-- Font Awesome 异步加载优化 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </noscript>
+
+    <!-- 内联 Critical CSS for Loading -->
+    <style>
+      #app-loading {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(4px);
+        font-family: system-ui, -apple-system, sans-serif;
+      }
+      .loading-spinner {
+        width: 48px;
+        height: 48px;
+        border: 4px solid #e5e7eb;
+        border-top-color: #FFC47E;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      .loading-text {
+        margin-top: 16px;
+        font-size: 1.125rem;
+        font-weight: 500;
+        color: #6b7280;
+        letter-spacing: 0.1em;
+        animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+      @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: .5; }
+      }
+    </style>
+    <script type="module" crossorigin src="/assets/index-DDUvruTZ.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/vendor-react-BCL_AwM0.js">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-ui-k4-TLOw-.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-DDfOqyDC.css">
   </head>
   <body>
+    <!-- 初始 Loading 内容 (移出 root 以避免被 React 立即清空) -->
+    <div id="app-loading">
+      <div class="loading-spinner"></div>
+      <div class="loading-text">載入中...</div>
+    </div>
+    
     <div id="root"></div>
+    <noscript>
+      <div style="display: flex; justify-content: center; align-items: center; height: 100vh; font-family: sans-serif;">
+        <p>本網站需要啟用 JavaScript 才能正常瀏覽。</p>
+      </div>
+    </noscript>
   </body>
 </html>

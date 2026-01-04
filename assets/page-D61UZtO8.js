@@ -1,0 +1,1 @@
+import{j as e}from"./vendor-ui-k4-TLOw-.js";import"./vendor-react-BCL_AwM0.js";const s=()=>e.jsx("div",{className:"prose max-w-none",children:e.jsx("p",{className:"text-gray-700 text-lg",children:"页面就業&培訓（就業支援和職業培訓服務）"})});export{s as default};

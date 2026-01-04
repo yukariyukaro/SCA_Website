@@ -1,1 +1,0 @@
-import{j as s}from"./index-D9dEft0v.js";const t=()=>s.jsx("div",{className:"prose max-w-none",children:s.jsx("p",{className:"text-gray-700 text-lg",children:"页面項目使命（項目目標和願景介紹）"})});export{t as default};
