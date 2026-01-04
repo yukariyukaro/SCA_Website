@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import HomeHeader from '../components/HomeHeader';
 import { NavigationButton } from '../components/NavigationButton';
 import type { NavigationConfig } from '../types/navigation';
+import { ImageWithState } from '../components/ui/ImageWithState';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -162,17 +163,19 @@ const Home: React.FC = () => {
           className="w-full h-full rounded-xl overflow-hidden shadow-lg"
         >
           <SwiperSlide>
-            <img
-              src={`${import.meta.env.BASE_URL}img/home/homeSwiper/Photo1.svg`}
+            <ImageWithState
+              src="img/home/homeSwiper/Photo1.svg"
               alt="社區支援活動"
               className="w-full h-full object-cover"
+              containerClassName="w-full h-full"
             />
           </SwiperSlide>
           <SwiperSlide>
-            <img
-              src={`${import.meta.env.BASE_URL}img/home/homeSwiper/Photo2.svg`}
+            <ImageWithState
+              src="img/home/homeSwiper/Photo2.svg"
               alt="專業醫療支援"
               className="w-full h-full object-cover"
+              containerClassName="w-full h-full"
             />
           </SwiperSlide>
         </Swiper>

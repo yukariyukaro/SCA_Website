@@ -152,7 +152,7 @@ const CentralReferralPage: React.FC = () => {
       <footer className="mt-8 pt-4 border-t border-gray-200 text-lg text-gray-500">
         <p>* 中央轉介「大致輪侯時間」由社署社工提供，僅作參考。</p>
         <div className="my-4">
-          <img src={`${import.meta.env.BASE_URL}img/资源总览/住宿照顾/image2.png`} alt="私營殘疾人士院舍買位計劃" className="w-full sm:w-4/5 lg:w-2/3" />
+          <img src="img/资源总览/住宿照顾/image2.png" alt="私營殘疾人士院舍買位計劃" className="w-full sm:w-4/5 lg:w-2/3" />
         </div>
       </footer>
     </div>

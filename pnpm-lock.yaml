@@ -8,9 +8,12 @@ importers:
 
   .:
     dependencies:
-      '@fontsource/noto-serif-sc':
-        specifier: ^5.2.7
-        version: 5.2.7
+      '@fontsource/noto-sans-sc':
+        specifier: ^5.2.8
+        version: 5.2.8
+      '@fontsource/noto-serif-tc':
+        specifier: ^5.2.8
+        version: 5.2.8
       '@generouted/react-router':
         specifier: ^1.20.0
         version: 1.20.0(react-router@7.9.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)(vite@7.0.4(@types/node@24.2.1)(jiti@1.21.7)(lightningcss@1.30.1)(yaml@2.8.1))
@@ -921,8 +924,11 @@ packages:
   '@floating-ui/utils@0.2.10':
     resolution: {integrity: sha512-aGTxbpbg8/b5JfU1HXSrbH3wXZuLPJcNEcZQFMxLs3oSzgtVu6nFPkbbGGUvBcUjKV2YyB9Wxxabo+HEH9tcRQ==}
 
-  '@fontsource/noto-serif-sc@5.2.7':
-    resolution: {integrity: sha512-gG0JQ++TkLZCkFxwAnemfvNcoTb769+2zKFB2RFMi/KvnJ6pLE1sMDvo+MKhoLTBKlko8HVVQXCa3JZTZjC8Qg==}
+  '@fontsource/noto-sans-sc@5.2.8':
+    resolution: {integrity: sha512-8T8HxIS3uAMCfaQawKRH/6yYZ1oRnJZB/CrGwfxGgJa+zAOBgx2lqZMiTY/WbQpLGlPRqX4zHXJYI09CI2q6tA==}
+
+  '@fontsource/noto-serif-tc@5.2.8':
+    resolution: {integrity: sha512-GVduDMy/WyWd9MhITJcEJIb1ThsyfWRXTormNAOwgBsPsuguAvjfk5PJAj0mu0U9NK6s9DrB2acwKfRR3dO69g==}
 
   '@generouted/react-router@1.20.0':
     resolution: {integrity: sha512-VAOdbH/Z2MzroTB61XYsS1uMJvX5am7CKuF/MgF3ZXS6YSvA6rz9pvQxZbg5PIK4R9h7bsA/oRQlJNLSgQKjEA==}
@@ -3807,7 +3813,9 @@ snapshots:
 
   '@floating-ui/utils@0.2.10': {}
 
-  '@fontsource/noto-serif-sc@5.2.7': {}
+  '@fontsource/noto-sans-sc@5.2.8': {}
+
+  '@fontsource/noto-serif-tc@5.2.8': {}
 
   '@generouted/react-router@1.20.0(react-router@7.9.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)(vite@7.0.4(@types/node@24.2.1)(jiti@1.21.7)(lightningcss@1.30.1)(yaml@2.8.1))':
     dependencies:

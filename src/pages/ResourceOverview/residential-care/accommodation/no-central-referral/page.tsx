@@ -25,7 +25,7 @@ const NoCentralReferralPage: React.FC = () => {
           <p className="text-lg font-semibold important-text">現時非領取傷殘津貼的服務使用者：</p>
         </div>
         <div className="my-4">
-          <img src={`${import.meta.env.BASE_URL}img/资源总览/住宿照顾/image3.png`} alt="暫托服務說明" className="w-full sm:w-4/5 lg:w-2/3" />
+          <img src="img/资源总览/住宿照顾/image3.png" alt="暫托服務說明" className="w-full sm:w-4/5 lg:w-2/3" />
         </div>
 
       </section>

@@ -6,11 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:github": "vite build --mode github",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@fontsource/noto-serif-sc": "^5.2.7",
+    "@fontsource/noto-sans-sc": "^5.2.8",
+    "@fontsource/noto-serif-tc": "^5.2.8",
     "@generouted/react-router": "^1.20.0",
     "@radix-ui/react-accordion": "^1.2.11",
     "@radix-ui/react-alert-dialog": "^1.1.14",

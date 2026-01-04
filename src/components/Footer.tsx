@@ -1,4 +1,5 @@
 import React from "react";
+import { ImageWithState } from "./ui/ImageWithState";
 
 export default function Footer() {
   return (
@@ -15,29 +16,33 @@ export default function Footer() {
               </div>
               <div className="flex flex-col w-full space-y-4"> {/* 增加垂直间距 */}
                 <div>
-                  <img 
-                    src={`${import.meta.env.BASE_URL}img/partners/香港復康會.svg`}
+                  <ImageWithState 
+                    src="img/partners/香港復康會.svg"
                     alt="香港復康會" 
-                    className="w-full max-w-[260px] md:max-w-[300px] h-auto"
+                    containerClassName="w-full max-w-[260px] md:max-w-[300px]"
+                    className="w-full h-auto"
                   />
                 </div>
                 <div className="flex flex-col space-y-4"> {/* 确保垂直排列时不重叠 */}
                   <div className="flex flex-wrap gap-4"> {/* 使用flex-wrap和gap确保不重叠 */}
-                    <img 
-                      src={`${import.meta.env.BASE_URL}img/partners/生科院3.svg`}
+                    <ImageWithState 
+                      src="img/partners/生科院3.svg"
                       alt="生科院3" 
-                      className="w-[65px] md:w-[75px] h-auto"
+                      containerClassName="w-[65px] md:w-[75px]"
+                      className="w-full h-auto"
                     />
-                    <img 
-                      src={`${import.meta.env.BASE_URL}img/partners/生科院2.svg`}
+                    <ImageWithState 
+                      src="img/partners/生科院2.svg"
                       alt="生科院2" 
-                      className="w-[160px] md:w-[180px] h-auto"
+                      containerClassName="w-[160px] md:w-[180px]"
+                      className="w-full h-auto"
                     />
                   </div>
-                  <img 
-                    src={`${import.meta.env.BASE_URL}img/partners/生科院1.svg`}
+                  <ImageWithState 
+                    src="img/partners/生科院1.svg"
                     alt="生科院1" 
-                    className="w-[250px] md:w-[280px] h-auto"
+                    containerClassName="w-[250px] md:w-[280px]"
+                    className="w-full h-auto"
                   />
                 </div>
               </div>
@@ -48,10 +53,11 @@ export default function Footer() {
               <div className="text-gray-800 text-base md:text-lg font-light mb-3 md:mb-0 md:mr-4 min-w-[5em]">
                 教育夥伴：
               </div>
-              <img 
-                src={`${import.meta.env.BASE_URL}img/partners/善衡書院.svg`}
+              <ImageWithState 
+                src="img/partners/善衡書院.svg"
                 alt="善衡書院" 
-                className="w-full max-w-[270px] md:w-[310px] h-auto"
+                containerClassName="w-full max-w-[270px] md:w-[310px]"
+                className="w-full h-auto"
               />
             </div>
           </div>
@@ -64,10 +70,11 @@ export default function Footer() {
               <div className="text-gray-800 text-base md:text-lg font-light mb-3 md:mb-0 md:mr-4 min-w-[5em]">
                 資助：
               </div>
-              <img 
-                src={`${import.meta.env.BASE_URL}img/partners/研究及知識轉移處.svg`}
+              <ImageWithState 
+                src="img/partners/研究及知識轉移處.svg"
                 alt="研究及知識轉移處" 
-                className="w-full max-w-[270px] md:max-w-[310px] h-auto"
+                containerClassName="w-full max-w-[270px] md:max-w-[310px]"
+                className="w-full h-auto"
               />
             </div>
 
@@ -76,10 +83,11 @@ export default function Footer() {
               <div className="text-gray-800 text-base md:text-lg font-light mb-3 md:mb-0 md:mr-4 min-w-[5em]">
                 協力：
               </div>
-              <img 
-                src={`${import.meta.env.BASE_URL}img/partners/小腦萎縮症協會.svg`}
+              <ImageWithState 
+                src="img/partners/小腦萎縮症協會.svg"
                 alt="小腦萎縮症協會" 
-                className="w-full max-w-[200px] md:max-w-[230px] h-auto"
+                containerClassName="w-full max-w-[200px] md:max-w-[230px]"
+                className="w-full h-auto"
               />
             </div>
           </div>
