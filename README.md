@@ -17,14 +17,14 @@ If you are developing a production application, we recommend using TypeScript wi
 
    ```bash
    pnpm install
-   # 或者使用 npm install
+
    ```
 
 2. 启动开发服务器
 
    ```bash
    pnpm dev
-   # 或者使用 npm run dev
+  
    ```
 
 3. 打开浏览器访问：
