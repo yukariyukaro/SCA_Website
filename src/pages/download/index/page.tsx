@@ -53,14 +53,14 @@ const DownloadIndex: React.FC = () => {
   return (
     <div>
       <p className="text-gray-700 text-xl mb-6">
-        歡迎下載小腦萎縮症患者手冊
+        歡迎下載小腦萎縮症社區資源包
       </p>
       
       <div className="space-y-6">
         <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-          <h3 className="text-xl font-semibold text-gray-800 mb-3">患者手冊</h3>
+          <h3 className="text-xl font-semibold text-gray-800 mb-3">社區資源包</h3>
           <p className="text-gray-600 mb-4">
-            專為小腦萎縮症患者設計的手冊。
+            小腦萎縮症社區資源包中包含了交通出行、日間照顧、醫療復康等社區資源，希望這些資源可以從生活的多個方面幫到患者和照顧者朋友們。
           </p>
           
           {/* 下载按钮 */}

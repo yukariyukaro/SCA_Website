@@ -87,7 +87,7 @@ function generateBreadcrumbFromPath(pathname: string): BreadcrumbItem[] {
     'team': '團隊介紹',
     'partners': '合作夥伴',
     'contact': '聯絡方式',
-    'download': '手冊下載',
+    'download': '社區資源包',
     'rehabus': '復康巴',
     'other-buses': '其他巴士',
     'taxi': '的士'

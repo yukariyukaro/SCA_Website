@@ -92,13 +92,13 @@ const Home: React.FC = () => {
     },
     {
       icon: 'fas fa-download',
-      text: '手冊下載',
+      text: '社區資源包',
       menuItems: [
         {
           id: 'patient-guide',
-          label: '患者手冊', 
+          label: '社區資源包', 
           contentId: '/download',
-          description: '小腦萎縮症患者收测手冊'
+          description: '小腦萎縮症社區資源包'
         }
       ]
     }

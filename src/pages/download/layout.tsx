@@ -8,7 +8,7 @@ import { Breadcrumb } from '../../components/Breadcrumb';
 import { downloadSidebarItems } from './_sidebar.config';
 
 const titleMap: Record<string, string> = {
-  '/download': '手冊下載',
+  '/download': '社區資源包',
 };
 
 // 定義Outlet Context的類型
@@ -20,7 +20,7 @@ interface OutletContextType {
 const DownloadLayout: React.FC = () => {
   const location = useLocation();
   const { isMobileMenuOpen, onCloseMobileMenu } = useOutletContext<OutletContextType>();
-  const title = titleMap[location.pathname] ?? '手冊下載';
+  const title = titleMap[location.pathname] ?? '社區資源包';
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -32,7 +32,7 @@ const DownloadLayout: React.FC = () => {
         isOpen={isMobileMenuOpen}
         onClose={onCloseMobileMenu}
         items={downloadSidebarItems}
-        title="手冊下載"
+        title="社區資源包"
       />
       
       <div className="mx-auto max-w-7xl px-4 lg:px-6 py-6">
@@ -41,7 +41,7 @@ const DownloadLayout: React.FC = () => {
             items={downloadSidebarItems} 
             isOpen={true} 
             onClose={() => {}} 
-            title="手冊下載" 
+            title="社區資源包" 
             className="sticky top-6 self-start" 
           />
           <main className="flex-1 min-w-0 bg-white rounded-xl shadow-sm p-6">
