@@ -1,0 +1,1 @@
+import{j as e}from"./vendor-ui-BBsVg6Fw.js";import"./vendor-react-H9fSUyru.js";const s=()=>e.jsx("div",{className:"prose max-w-none",children:e.jsx("p",{className:"text-gray-700 text-lg",children:"页面合作夥伴（協作機構和組織展示）"})});export{s as default};

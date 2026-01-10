@@ -1,1 +1,0 @@
-import{j as s}from"./vendor-ui-k4-TLOw-.js";import"./vendor-react-BCL_AwM0.js";const r=()=>s.jsx("div",{className:"prose max-w-none",children:s.jsx("p",{className:"text-gray-700 text-lg",children:"页面項目使命（項目目標和願景介紹）"})});export{r as default};

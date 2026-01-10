@@ -1,0 +1,1 @@
+import{j as e}from"./vendor-ui-BBsVg6Fw.js";import"./vendor-react-H9fSUyru.js";const t=()=>e.jsx("div",{className:"prose max-w-none",children:e.jsx("p",{className:"text-gray-700 text-lg",children:"页面資源總覽（資源總覽介紹）"})});export{t as default};

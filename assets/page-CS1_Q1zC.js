@@ -1,1 +1,0 @@
-import{j as t}from"./vendor-ui-k4-TLOw-.js";import"./vendor-react-BCL_AwM0.js";const s=()=>t.jsx("div",{className:"prose max-w-none",children:t.jsx("p",{className:"text-gray-700 text-lg",children:"页面攜手共行（社區支援和互助服務）"})});export{s as default};

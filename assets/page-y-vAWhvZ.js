@@ -1,0 +1,1 @@
+import{j as t}from"./vendor-ui-BBsVg6Fw.js";import"./vendor-react-H9fSUyru.js";const a=()=>t.jsx("div",{className:"prose max-w-none",children:t.jsx("p",{className:"text-gray-700 text-lg",children:"页面聯絡方式（聯繫信息和地址）"})});export{a as default};

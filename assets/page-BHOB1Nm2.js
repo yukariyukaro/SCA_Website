@@ -1,1 +1,0 @@
-import{j as e}from"./vendor-ui-k4-TLOw-.js";import"./vendor-react-BCL_AwM0.js";const a=()=>e.jsx("div",{className:"prose max-w-none",children:e.jsx("p",{className:"text-gray-700 text-lg",children:"页面團隊介紹（核心團隊成員信息）"})});export{a as default};
