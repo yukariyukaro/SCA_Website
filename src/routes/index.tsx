@@ -28,7 +28,9 @@ const HomeBasedPage = React.lazy(() => import('../pages/ResourceOverview/residen
 const IntegratedPage = React.lazy(() => import('../pages/ResourceOverview/residential-care/community/integrated/page'));
 const NonSwdPage = React.lazy(() => import('../pages/ResourceOverview/residential-care/community/non-swd/page'));
 
-const MedicalRehabilitation = React.lazy(() => import('../pages/ResourceOverview/medical-rehabilitation/page'));
+const MedicalEquipment = React.lazy(() => import('../pages/ResourceOverview/medical-rehabilitation/equipment/page'));
+const MedicalTraining = React.lazy(() => import('../pages/ResourceOverview/medical-rehabilitation/training/page'));
+
 const CommunitySupport = React.lazy(() => import('../pages/ResourceOverview/community-support/page'));
 const EmploymentTraining = React.lazy(() => import('../pages/ResourceOverview/employment-training/page'));
 const DownloadLayout = React.lazy(() => import('../pages/download/layout'));
@@ -109,10 +111,11 @@ export const routes = [
           },
           { 
             path: 'medical-rehabilitation', 
-            element: <MedicalRehabilitation />,
+            element: <Outlet />,
             children: [
-              { path: 'equipment', element: <MedicalRehabilitation /> },
-              { path: 'training', element: <MedicalRehabilitation /> }
+              { index: true, element: <Navigate to="equipment" replace /> },
+              { path: 'equipment', element: <MedicalEquipment /> },
+              { path: 'training', element: <MedicalTraining /> }
             ]
           },
           { 
@@ -147,5 +150,3 @@ export const routes = [
 ];
 
 export default routes;
-
-

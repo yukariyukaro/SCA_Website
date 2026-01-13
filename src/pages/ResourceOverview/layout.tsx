@@ -25,6 +25,8 @@ const titleMap: Record<string, string> = {
   '/resources/residential-care/accommodation/no-central-referral': '住宿照顧（無需中央轉介）',
   '/resources/residential-care/accommodation/central-referral': '住宿照顧（需中央轉介）',
   '/resources/medical-rehabilitation': '醫療&復康',
+  '/resources/medical-rehabilitation/equipment': '醫療器材租借',
+  '/resources/medical-rehabilitation/training': '復康訓練',
   '/resources/community-support': '攜手共行',
   '/resources/employment-training': '就業&培訓',
 };
