@@ -7,7 +7,6 @@ import {
   SidebarMenuItem as UISidebarMenuItem,
   SidebarMenuSub,
   SidebarMenuSubItem,
-  SidebarMenuSubButton,
   SidebarMenuButton,
 } from '../ui/sidebar';
 import { ArrowRight } from '../Icons/ArrowRight';

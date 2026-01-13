@@ -1,5 +1,4 @@
 import React from 'react';
-import TelephoneIcon from '../../../../../components/Icons/Telephone';
 
 const HomeBasedPage: React.FC = () => {
   return (

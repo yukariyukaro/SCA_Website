@@ -3,7 +3,7 @@
  */
 
 // 语言类型
-export type Language = 'zh-TW' | 'zh-CN';
+export type Language = "zh-TW" | "zh-CN";
 
 // 左侧功能栏项目接口
 export interface LeftSidebarItemProps {
@@ -30,4 +30,7 @@ export interface LanguageSwitcherProps {
   className?: string;
 }
 
-
+export interface MobileMenuButtonProps {
+  onClick: () => void;
+  className?: string;
+}

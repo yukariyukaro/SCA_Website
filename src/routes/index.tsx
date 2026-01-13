@@ -31,8 +31,10 @@ const NonSwdPage = React.lazy(() => import('../pages/ResourceOverview/residentia
 const MedicalEquipment = React.lazy(() => import('../pages/ResourceOverview/medical-rehabilitation/equipment/page'));
 const MedicalTraining = React.lazy(() => import('../pages/ResourceOverview/medical-rehabilitation/training/page'));
 
-const CommunitySupport = React.lazy(() => import('../pages/ResourceOverview/community-support/page'));
-const EmploymentTraining = React.lazy(() => import('../pages/ResourceOverview/employment-training/page'));
+const PatientGroupsPage = React.lazy(() => import('../pages/ResourceOverview/community-support/patient-groups/page'));
+const PsychologicalSupportPage = React.lazy(() => import('../pages/ResourceOverview/community-support/psychological/page'));
+const CaregiverTrainingPage = React.lazy(() => import('../pages/ResourceOverview/employment-training/caregiver/page'));
+const VocationalRehabilitationPage = React.lazy(() => import('../pages/ResourceOverview/employment-training/vocational/page'));
 const DownloadLayout = React.lazy(() => import('../pages/download/layout'));
 const DownloadIndex = React.lazy(() => import('../pages/download/index/page'));
 
@@ -120,19 +122,21 @@ export const routes = [
           },
           { 
             path: 'community-support', 
-            element: <CommunitySupport />,
+            element: <Outlet />,
             children: [
-              { path: 'patient-groups', element: <CommunitySupport /> },
-              { path: 'psychological', element: <CommunitySupport /> }
-            ]
+              { index: true, element: <Navigate to="patient-groups" replace /> },
+              { path: 'patient-groups', element: <PatientGroupsPage /> },
+              { path: 'psychological', element: <PsychologicalSupportPage /> },
+            ],
           },
           { 
             path: 'employment-training', 
-            element: <EmploymentTraining />,
+            element: <Outlet />,
             children: [
-              { path: 'caregiver', element: <EmploymentTraining /> },
-              { path: 'vocational', element: <EmploymentTraining /> }
-            ]
+              { index: true, element: <Navigate to="caregiver" replace /> },
+              { path: 'caregiver', element: <CaregiverTrainingPage /> },
+              { path: 'vocational', element: <VocationalRehabilitationPage /> },
+            ],
           },
         ],
       },

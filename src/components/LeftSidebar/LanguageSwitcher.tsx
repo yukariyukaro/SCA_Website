@@ -1,17 +1,14 @@
 import React from 'react';
 import { Globe } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { Language, LanguageSwitcherProps } from './types';
+import { LanguageSwitcherProps } from './types';
 
 /**
  * 语言切换组件
  * 显示语言图标，暂不实现具体功能
  */
-export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
-  currentLanguage,
-  onLanguageChange,
-  className = ''
-}) => {
+export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = (props) => {
+  const { className = '' } = props;
   return (
     <div className={cn('w-full', className)}>
       <div

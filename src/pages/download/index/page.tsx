@@ -43,7 +43,8 @@ const DownloadIndex: React.FC = () => {
       
     } catch (error) {
       console.error('下载错误:', error);
-      alert(`下載失敗: ${error.message}`);
+      const message = error instanceof Error ? error.message : String(error);
+      alert(`下載失敗: ${message}`);
     } finally {
       setIsDownloading(false);
       setDownloadProgress(0);
@@ -77,6 +78,12 @@ const DownloadIndex: React.FC = () => {
           </button>
           
           {/* 下载进度条 */}
+          <div className="mt-4">
+            <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+              <div className="h-full bg-[#a45a52]" style={{ width: `${downloadProgress}%` }} />
+            </div>
+            <p className="text-sm text-gray-500 mt-2">進度：{downloadProgress}%</p>
+          </div>
           
         </div>
       </div>

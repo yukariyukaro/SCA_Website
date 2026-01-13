@@ -1,4 +1,3 @@
-import React from "react";
 import { ImageWithState } from "./ui/ImageWithState";
 
 export default function Footer() {

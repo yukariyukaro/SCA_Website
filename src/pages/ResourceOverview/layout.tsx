@@ -28,7 +28,11 @@ const titleMap: Record<string, string> = {
   '/resources/medical-rehabilitation/equipment': '醫療器材租借',
   '/resources/medical-rehabilitation/training': '復康訓練',
   '/resources/community-support': '攜手共行',
+  '/resources/community-support/patient-groups': '病人互助組織',
+  '/resources/community-support/psychological': '心理與社交支持',
   '/resources/employment-training': '就業&培訓',
+  '/resources/employment-training/caregiver': '照顧者培訓',
+  '/resources/employment-training/vocational': '職業康復及輔助就業',
 };
 
 // 定義Outlet Context的類型
