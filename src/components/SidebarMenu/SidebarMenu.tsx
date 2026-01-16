@@ -55,7 +55,7 @@ export const SidebarMenu: React.FC<SidebarMenuProps> = ({ items, isOpen: _isOpen
       {/* 头部标题 */}
       <div className="p-4">
         <SidebarGroupLabel className="m-0 p-0">
-          <span className="font-bold text-black" style={{fontFamily: 'Source Han Serif CN, serif', fontSize: 'var(--font-size-lg)'}}>{title}</span>
+          <span className="font-bold text-black text-3xl" style={{fontFamily: 'Source Han Serif CN, serif'}}>{title}</span>
         </SidebarGroupLabel>
       </div>
       {/* 菜单内容：高度自适应，超出时内部滚动 */}

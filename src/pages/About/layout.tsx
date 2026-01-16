@@ -9,10 +9,8 @@ import { aboutSidebarItems } from './_sidebar.config';
 
 const titleMap: Record<string, string> = {
   '/about': '關於我們',
-  '/about/mission': '項目使命',
-  '/about/team': '團隊介紹',
-  '/about/partners': '合作夥伴',
-  '/about/contact': '聯絡方式',
+  '/about/team': '我們的團隊',
+  '/about/faq': 'Q&A 常見問題',
 };
 
 // 定義Outlet Context的類型
@@ -43,7 +41,9 @@ const AboutLayout: React.FC = () => {
         <div className="flex items-start gap-6">
           <SidebarMenu items={aboutSidebarItems} isOpen={true} onClose={() => {}} title="關於我們" className="sticky top-6 self-start" />
           <main className="flex-1 min-w-0 bg-white rounded-xl shadow-sm p-6">
-            <h1 className="font-bold text-[#a45a52] mb-6" style={{fontSize: '1.875rem'}}>{title}</h1>
+            <h1 className="text-2xl sm:text-3xl lg:text-[60px] lg:leading-[85px] font-bold text-black mb-10">
+              {title}
+            </h1>
             <Outlet />
           </main>
         </div>
@@ -54,6 +54,3 @@ const AboutLayout: React.FC = () => {
 };
 
 export default AboutLayout;
-
-
-

@@ -3,9 +3,10 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import os from 'os'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const isWindows = process.platform === 'win32'
+const isWindows = os.platform() === 'win32'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {

@@ -5,11 +5,8 @@ import { Outlet, Navigate } from 'react-router-dom';
 const AppLayout = React.lazy(() => import('../components/AppLayout'));
 const Home = React.lazy(() => import('../pages/Home'));
 const AboutLayout = React.lazy(() => import('../pages/About/layout'));
-const AboutIndex = React.lazy(() => import('../pages/About/index/page'));
-const AboutMission = React.lazy(() => import('../pages/About/mission/page'));
 const AboutTeam = React.lazy(() => import('../pages/About/team/page'));
-const AboutPartners = React.lazy(() => import('../pages/About/partners/page'));
-const AboutContact = React.lazy(() => import('../pages/About/contact/page'));
+const AboutFaq = React.lazy(() => import('../pages/About/faq/page'));
 const ResourceOverviewLayout = React.lazy(() => import('../pages/ResourceOverview/layout'));
 const ResourceOverviewIndex = React.lazy(() => import('../pages/ResourceOverview/index/page'));
 const DisabilityCertificate = React.lazy(() => import('../pages/ResourceOverview/disability-certificate/page'));
@@ -50,11 +47,9 @@ export const routes = [
         path: 'about',
         element: <AboutLayout />,
         children: [
-          { index: true, element: <AboutIndex /> },
-          { path: 'mission', element: <AboutMission /> },
+          { index: true, element: <Navigate to="team" replace /> },
           { path: 'team', element: <AboutTeam /> },
-          { path: 'partners', element: <AboutPartners /> },
-          { path: 'contact', element: <AboutContact /> },
+          { path: 'faq', element: <AboutFaq /> },
         ],
       },
 

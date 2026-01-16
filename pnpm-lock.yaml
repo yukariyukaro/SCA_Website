@@ -81,6 +81,9 @@ importers:
         specifier: ^3.3.1
         version: 3.3.1
     devDependencies:
+      '@babel/preset-react':
+        specifier: ^7.28.5
+        version: 7.28.5(@babel/core@7.28.4)
       '@eslint/js':
         specifier: ^9.30.1
         version: 9.31.0
@@ -691,8 +694,8 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0-0 || ^8.0.0-0 <8.0.0
 
-  '@babel/preset-react@7.27.1':
-    resolution: {integrity: sha512-oJHWh2gLhU9dW9HHr42q0cI0/iHHXTLGe39qvpAZZzagHy0MzYLCnCVV0symeRvzmjHyVU7mw2K06E6u/JwbhA==}
+  '@babel/preset-react@7.28.5':
+    resolution: {integrity: sha512-Z3J8vhRq7CeLjdC58jLv4lnZ5RKFUJWqH5emvxmv9Hv3BD1T9R/Im713R4MTKwvFaV74ejZ3sM01LyEKk4ugNQ==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -3628,7 +3631,7 @@ snapshots:
       '@babel/types': 7.28.4
       esutils: 2.0.3
 
-  '@babel/preset-react@7.27.1(@babel/core@7.28.4)':
+  '@babel/preset-react@7.28.5(@babel/core@7.28.4)':
     dependencies:
       '@babel/core': 7.28.4
       '@babel/helper-plugin-utils': 7.27.1
@@ -3875,7 +3878,7 @@ snapshots:
       '@babel/parser': 7.28.4
       '@babel/plugin-syntax-jsx': 7.27.1(@babel/core@7.28.4)
       '@babel/preset-env': 7.28.3(@babel/core@7.28.4)
-      '@babel/preset-react': 7.27.1(@babel/core@7.28.4)
+      '@babel/preset-react': 7.28.5(@babel/core@7.28.4)
       '@babel/preset-typescript': 7.27.1(@babel/core@7.28.4)
       '@babel/traverse': 7.28.4
       '@babel/types': 7.28.4
