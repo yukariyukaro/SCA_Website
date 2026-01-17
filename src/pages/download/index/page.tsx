@@ -11,13 +11,13 @@ const DownloadIndex: React.FC = () => {
       setDownloadProgress(0);
 
       // 获取PDF文件的URL
-      const pdfUrl = '/_小腦萎縮症 小冊子-FINAL.pdf';
+      const pdfUrl = '_小腦萎縮症 小冊子-FINAL.pdf';
       
       // 使用fetch下载文件
-      const response = await fetch(pdfUrl);
+      const response = await fetch(encodeURI(pdfUrl));
       
       if (!response.ok) {
-        throw new Error(`下载失败: ${response.status} ${response.statusText}`);
+        throw new Error(`下載失敗: ${response.status} ${response.statusText}`);
       }
 
       // 获取文件内容
@@ -42,7 +42,7 @@ const DownloadIndex: React.FC = () => {
   
       
     } catch (error) {
-      console.error('下载错误:', error);
+      console.error('下載錯誤:', error);
       const message = error instanceof Error ? error.message : String(error);
       alert(`下載失敗: ${message}`);
     } finally {
