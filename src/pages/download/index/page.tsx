@@ -11,7 +11,7 @@ const DownloadIndex: React.FC = () => {
       setDownloadProgress(0);
 
       // 获取PDF文件的URL
-      const pdfUrl = '_小腦萎縮症 小冊子-FINAL.pdf';
+      const pdfUrl = '小腦萎縮症 小冊子-FINAL.pdf';
       
       // 使用fetch下载文件
       const response = await fetch(encodeURI(pdfUrl));
